@@ -1,10 +1,18 @@
+body{
+
+margin:0;
+padding: 0;
+font-family: sans-serif;
+
+}
 .weatherDataCont{
  background-color : rgba(200, 200,200,0.5);
  width: 400px;
  height:  100px;
  line-height: 100px;
+ margin:3px 16px 2px 15px;
  border-radius: 5px;
- /* margin:15px; */
+ box-shadow: 2px 2px 13px 0px black;
 }
 
 .weatherExtraInfoCont{
@@ -41,10 +49,13 @@
 .extraInfoText{
     display: block;
     color: #1535C5;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
 
 }
+
+
+
 
 
 .wicon {

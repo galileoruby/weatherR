@@ -4,28 +4,28 @@ import WeatherTemperature from './WeatherTemperature';
 import WeatherLocation from './WeatherLocation';
 
 
-import {
-    SUN,
-   
-} from './../../../constant/weathers';
+// import {
+//     SUN,
+
+// } from './../../../constant/weathers';
 
 
 
-const WeatherData = ({data: {temperature, weatherState,humidity,wind}}) => (
+const WeatherData = ({ data: { temperature, weatherState, humidity, wind } }) => (
 
     // const {temperature, weatherState,humidity,wind}= data;
+    //const WeatherTemperature = ({ temperature, weatherState }) => (
 
-        <div className="weatherDataCont" >
-                <WeatherTemperature 
-                    temperature={temperature} 
-                    weatherState={weatherState} 
-                    />
 
-                <WeatherExtraInfo humidity={humidity} wind={wind} />
+    <div className="weatherDataCont" >
 
-        </div>
-        );
-        
+        <WeatherTemperature temperature={temperature} weatherState={weatherState} />
+
+        <WeatherExtraInfo humidity={humidity} wind={wind} />
+
+    </div>
+);
+
 
 
 export default WeatherData;

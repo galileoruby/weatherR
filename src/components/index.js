@@ -6,10 +6,7 @@ import './styles.css';
 
 const WeatherLocation = () => (
 
-   
-
-
-
+    
 );
 
 
