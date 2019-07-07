@@ -5,10 +5,11 @@ import WeatherData from './WeatherData';
 import {
     SUN,
     STARS,
-    WINDY,
     CLOUDY,
 
 } from './../../../constant/weathers';
+import { resolve } from 'q';
+import { debug } from 'util';
 
 const data = {
     temperature: 31,
@@ -48,14 +49,48 @@ class WeatherLocation extends Component {
         };
     }
 
+
+    getWeatherState = weather_data => {
+        return SUN;
+    }
+
+    getData = weather_data => {
+        const { humidity, temp } = weather_data.main;
+        const { speed } = weather_data.wind;
+        const weatherState = this.getWeatherState(weather_data);
+
+        const data = {
+            humidity,
+            temperature: temp,
+            weatherState,
+            wind: `${speed} m/s`
+        }
+
+
+        return data;
+
+    }
+
     handleUpdateClick = () => {
 
 
-        fetch(apiWeather);
+        fetch(apiWeather).then(resolve => {
 
-        this.setState({
-            city: 'Linares Nuevo León.',
-            data: data2,
+            return resolve.json();
+        }).then(datax => {
+
+            const newWeather = this.getData(datax);
+            this.setState({
+                city: 'Linares Nuevo León. fierro pariente.',
+                data: newWeather,
+
+
+
+            });
+
+            console.log(newWeather); 
+            debugger;
+
         });
 
 
